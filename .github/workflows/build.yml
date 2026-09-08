@@ -24,8 +24,10 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.1.1'
 
-      - name: Build Debug APK with System Gradle
+      - name: Build Debug APK
         run: gradle assembleDebug --stacktrace
 
       - name: Upload Output APK
